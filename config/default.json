@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb://localhost:27017/expense-manager",
+    "jwtSecret": "expense_manager_secret"
+}
