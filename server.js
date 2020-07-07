@@ -20,7 +20,7 @@ mongoose
   //Use Routes
   app.use('/api/users', require('./routes/api/users'));
   app.use('/api/auth',require('./routes/api/auth'));
-  app.use('/api/expense',require('./routes/api/expense'))
+  app.use('/api/expense',require('./routes/api/expense'));
   app.use("/api/income", require('./routes/api/income'));
 
   //Serve static assets if in production
