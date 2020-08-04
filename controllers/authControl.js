@@ -32,18 +32,20 @@ const validateToken = (req, res) => {
               name: user.name,
               id: user.id,
               email: user.email,
+              expense_categories: user.expense_categories,
+              income_categories: user.income_categories,
             },
           });
         }
       );
     });
   });
-}
+};
 
-const validateUser = (req,res) => {
-    User.findById(req.user.id)
+const validateUser = (req, res) => {
+  User.findById(req.user.id)
     .select("-password")
     .then((user) => res.json(user));
-}
+};
 
-module.exports = {validateToken,validateUser}
+module.exports = { validateToken, validateUser };

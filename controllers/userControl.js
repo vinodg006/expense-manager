@@ -5,9 +5,9 @@ const jwt = require("jsonwebtoken");
 //User Model
 const User = require("../models/User");
 
-const validateUserRegistration = (req,res) => {
-    const { name, email, password } = req.body;
-
+const validateUserRegistration = (req, res) => {
+  const { name, email, password } = req.body;
+  console.log("server hittt");
   //Simple validation
   if (!name || !email || !password) {
     return res.status(404).json({ msg: "Please enter all the fields" });
@@ -41,6 +41,8 @@ const validateUserRegistration = (req,res) => {
                   name: user.name,
                   id: user.id,
                   email: user.email,
+                  expense_categories: user.expense_categories,
+                  income_categories: user.income_categories,
                 },
               });
             }
@@ -49,6 +51,6 @@ const validateUserRegistration = (req,res) => {
       });
     });
   });
-}
+};
 
 module.exports = validateUserRegistration;

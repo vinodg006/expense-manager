@@ -1,22 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import Login from "./features/login/LoginContainer";
+import Auth from "./features/auth/AuthContainer";
 import Dashboard from "./features/dashboard/DashboardContainer";
 
 class App extends Component {
   render() {
-      return this.props.isAuthenticated ? <Dashboard /> : <Login />;
+    return this.props.isAuthenticated ? <Dashboard /> : <Auth />;
+    // return true ? <Dashboard /> : <Auth />;
   }
-} 
+}
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     user: state.auth.user,
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(App);
+export default connect(mapStateToProps, null)(App);

@@ -26,19 +26,19 @@ const UserSchema = new Schema({
       name: { type: String, trim: true },
       color: {
         type: String,
-        default: getRandomColor
-      }
-    }
+        default: getRandomColor,
+      },
+    },
   ],
   income_categories: [
     {
       name: { type: String, trim: true },
       color: {
         type: String,
-        default: getRandomColor
-      }
-    }
-  ]
+        default: getRandomColor,
+      },
+    },
+  ],
 });
 
 module.exports = User = mongoose.model("user", UserSchema);
